@@ -1,29 +1,50 @@
-let hangManGameObj={
+let hangManGameObj = {
 
-    wordsToPick:{
+    wordsToPick: {
+
+
 
         genesis: {
             picture: "genesis.jpg",
             song: "Illegal Alien",
             preview: "https://p.scdn.co/mp3-preview/b29a2b925b9654e0efaaff37504fd234307e0ad8"
-          },
-          madonna: {
+        },
+        madonna: {
             picture: "madonna.jpg",
             song: "Material Girl",
             preview: "https://p.scdn.co/mp3-preview/5ff7f7b7d2af1a747da275bed3c49054c01b5b1c"
-          },
-          toto: {
+        },
+        toto: {
             picture: "toto.jpg",
             song: "Rosanna",
             preview: "https://p.scdn.co/mp3-preview/7cef811eaeb7c7b98245750e73d9d68e9008f317"
-          }
-    }
+        }
 
 
+    },
 
 }
 
-console.log(hangManGameObj);
-console.log(hangManGameObj.wordsToPick);
-console.log(hangManGameObj.wordsToPick.genesis);
-console.log(hangManGameObj.wordsToPick.genesis.song);
+// console.log(hangManGameObj);
+// console.log(hangManGameObj.wordsToPick);
+// console.log(hangManGameObj.wordsToPick.genesis);
+// console.log(hangManGameObj.wordsToPick.genesis.song);
+
+let currentWord = null;
+let lettersInWord = [];
+let correctGuessLetters = [];
+let allGuessedLetters = [];
+let guessesLeft = 0;
+let totalGuesses = 0;
+let currentGuessedLetter = null;
+wins = 0;
+
+function randomWord() {
+    let wordsKey = Object.keys(hangManGameObj.wordsToPick);
+    console.log(wordsKey);
+    hangManGameObj.currentWord = wordsKey[Math.floor(Math.random() * wordsKey.length)];
+    console.log(hangManGameObj.currentWord);
+
+}
+
+randomWord();
